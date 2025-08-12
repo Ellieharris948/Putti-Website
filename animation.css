@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Gliker:wght@400;700&display=swap');
+
+.hero-paint {
+  position: relative;
+  min-height: 40vh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+}
+
+.paint-bg {
+  position: absolute; inset: 0;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+.paint-bg.next { opacity: 0; }
+
+.paint {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.paint-text{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; font-family:'Gliker', sans-serif; z-index:3;
+}
+.text-base, .text-reveal{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.paint-text h1{ font-size:clamp(2.4rem, 6vw, 4.6rem); margin:0 0 .5rem; }
+.paint-text p{ font-size:clamp(1.2rem, 2.6vw, 1.6rem); margin:0; }
+
