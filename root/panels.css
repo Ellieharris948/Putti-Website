@@ -1,0 +1,178 @@
+:root{
+  --lime:#c7ff61;
+  --black:#000;
+  --dark-blue:#07607b;
+  --light-turq:#9af1dd;
+  --dark-green:#066b4d;
+  --off-white:#fffdf3;
+}
+
+/* ========= Panel scaffold ========= */
+.panel{
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;                                  /* clip by default */
+  padding: clamp(60px, 12vw, 140px) 0;
+}
+.panel .container{
+  width:min(1100px, 92%);
+  margin-inline:auto;
+  position: relative;
+  z-index: 2;
+}
+.centered{ text-align:center; }
+
+/* ========= Background helpers ========= */
+.bg{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+.bg svg{ position:absolute; left:50%; transform:translateX(-50%); width:120vw; height:auto; }
+
+/* ========= Aqua section ========= */
+.panel-aqua{ background: var(--light-turq); }
+.panel-aqua .cap-blue{ top:0; height: clamp(120px, 18vh, 220px); }
+.panel-aqua .band{ top:0; height: clamp(260px, 46vh, 560px); }
+
+/* ========= White section ========= */
+.panel-white{
+  background: var(--off-white);
+  overflow: visible;                                  /* allow rings to dip into lime */
+  position: relative;
+  z-index: 1;
+}
+.panel-white .container{ position: relative; z-index: 3; }
+.panel-white .cap-light{ top:-1px; height: clamp(120px, 18vh, 220px); }
+
+/* ========= Right rings (only on the right) ========= */
+.swoosh-right{
+  position:absolute;
+  right:-10vw;                                        /* hide tails off-screen */
+  bottom:-60vh;                                       /* mostly inside the lime panel */
+  width: clamp(640px, 58vw, 1200px);                  /* reach toward center, scale with screen */
+  opacity:.95;
+  z-index:3;                                          /* under lime card, above backgrounds */
+  pointer-events:none;
+}
+
+/* ========= Lime section ========= */
+.panel-lime{
+  background: var(--lime);
+  position: relative;
+  overflow: hidden;                                   /* hide any lower ends -> no visible "cut" */
+  isolation: auto;
+}
+
+/* REMOVE left-side lines entirely */
+.swoosh-lime-wide{ display:none !important; }
+
+/* ========= Lime card ========= */
+.panel-lime .tight{
+  max-width: 1200px;           /* was 820px */
+  margin-inline: auto;
+}
+.panel-lime .card{
+  background: #fffdf3;
+  color: #222;
+  width: min(1100px, 96%);     /* was min(820px, 92%) */
+  padding: clamp(28px, 3.2vw, 44px);  /* more breathing room */
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0,0,0,.10);
+  margin: 1.75rem auto 0;
+  text-align: left;
+  position: relative;
+  z-index: 4;
+  font-size: clamp(1rem, 1.05vw, 1.125rem);
+  line-height: 1.55;
+}
+.panel-lime .card h4{ margin:.5rem 0 .25rem; font-weight:800; }
+.panel-lime .card .note{ margin-top:1rem; font-weight:700; text-align:center; }
+
+.panel-lime .card .h-gliker{
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+
+/* ==== Big wave headings ==== */
+.h-wave{
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6vw, 4rem);   /* bigger titles */
+  line-height: 1;
+  margin: 0;
+}
+
+/* Position the headings ON their waves */
+.on-wave-dark,
+.on-wave-light{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;                 /* above the SVGs, below other content */
+  text-align: center;
+  width: 100%;
+}
+
+/* "DON'T" sits on the dark blue top wave */
+.on-wave-dark{
+  top: clamp(18px, 6vh, 90px); /* adjust height of placement on the crest */
+  color: var(--black);
+  text-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+
+/* "DO" sits on the light-aqua seam wave at the top of the white panel */
+.on-wave-light{
+  top: clamp(16px, 6vh, 90px);
+  color: var(--black);
+}
+
+/* Push the body text down so it doesn't collide with the overlaid title */
+.panel-aqua .container{ padding-top: clamp(90px, 14vh, 150px); }
+.panel-white .container{ padding-top: clamp(90px, 14vh, 150px); }
+
+
+
+
+/* ========= Type ========= */
+.h-gliker{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight:800; letter-spacing:.01em;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin: 0 0 1rem;
+}
+
+.texters{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight:200; letter-spacing:.01em;
+  font-size: clamp(1rem, 2.4vw, 1.6rem);
+  margin: 0 0 1rem;
+}
+.bullets{ list-style:none; margin:0; padding:0; }
+.bullets li{ margin:.85rem 0; color:#2a2a2a; }
+
+/* ========= Responsive tuning ========= */
+@media (max-width: 1200px){
+  .swoosh-right{
+    right:-14vw;
+    bottom:-56vh;
+    width: clamp(720px, 72vw, 1350px);
+  }
+}
+@media (max-width: 900px){
+  .panel{ padding: clamp(44px, 10vw, 80px) 0; }
+  .swoosh-right{
+    right:-30vw;                                      /* keep visible on smaller screens */
+    bottom:-52vh;
+    width: 150vw;                                     /* extend further inward */
+  }
+}
+@media (max-width: 600px){
+  .swoosh-right{
+    right:-46vw;
+    bottom:-48vh;
+    width: 200vw;                                     /* big so the crescent is still obvious */
+  }
+  .panel-lime .card{ width: min(680px, 94%); }
+}
+
+
+@media (min-width: 1400px){
+  .panel-lime .card{ width: 1180px; }
+}

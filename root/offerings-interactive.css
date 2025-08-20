@@ -1,0 +1,102 @@
+/* --- Heading --- */
+#offerings h3{
+  text-align:center;
+  font-weight:800;
+  letter-spacing:.2px;
+  font-size:clamp(1.8rem,4.5vw,2.4rem);
+  margin:0 0 1rem 0;
+}
+
+/* --- Stage: keep the list centered forever --- */
+#offerings .offers{
+  position:relative;              /* so the detail can be absolutely positioned */
+  display:flex;
+  justify-content:start;         /* center the list */
+  align-items:flex-start;
+  margin-inline:auto;
+  overflow:visible;
+}
+
+/* The list stack */
+#offerings .offer-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  width:min(420px, 92vw);         /* fixed responsive width so we can place the detail */
+  display:grid;
+  gap:.25rem;                      /* tighter spacing */
+                  /* no group outline */
+}
+
+/* Blue rectangles — square, no borders */
+#offerings .offer-list li{
+  background:#9af1dd;
+  color:black;
+  border:none;
+  border-radius:0;
+  padding:.7rem .9rem;
+  text-align:center;
+  font-weight:600;
+  cursor:pointer;
+  user-select:none;
+  transition:transform .25s ease, background .2s ease, box-shadow .2s ease;
+  box-shadow:none;
+}
+
+/* Hover/active look */
+#offerings .offer-list li:hover,
+#offerings .offer-list li:focus-visible,
+#offerings .offer-list li.is-active{
+  background:#07607b;
+  box-shadow:0 4px 14px rgba(11,61,145,.12);
+}
+
+/* ONLY the active tile slides left; others stay perfectly centered */
+#offerings .offer-list li.is-active{
+  transform:translateX(-40%);     /* tweak distance to taste */
+}
+
+/* --- Detail panel: floats to the RIGHT of the centered list (does not move the list) --- */
+#offerings .offer-detail{
+  position:relative;
+
+  /* move to the right by half the list width + a gap */
+  transform:translateX(calc(min(420px, 40vw) / 2 + 24px));
+  width:clamp(360px, 42vw, 560px);
+  background:#fffdf3;
+  border:none;                    /* no outline */
+  border-radius:0;
+  padding:1rem 1.25rem;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .18s ease .05s;
+}
+
+/* reveal copy when any item is active */
+#offerings .offers.show-detail .offer-detail{
+  opacity:1;
+  pointer-events:auto;
+}
+
+#offerings .offer-title{
+  margin:0 0 .4rem 0;
+  font-size:clamp(1rem,2.2vw,1.15rem);
+  color:#000000;
+}
+#offerings .offer-text{
+  margin:0;
+  line-height:1.5;
+  color:#163d6d;
+}
+
+/* Mobile: stack; no slide on small screens */
+@media (max-width: 880px){
+  #offerings .offers{ display:block; }
+  #offerings .offer-detail{
+    position:static;
+    transform:none;
+    width:100%;
+    margin-top:1rem;
+  }
+  #offerings .offer-list li.is-active{ transform:none; }
+}
