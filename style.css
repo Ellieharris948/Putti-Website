@@ -42,10 +42,11 @@ a:hover{ text-decoration: underline; }
 /* ===== Buttons / Pills ===== */
 .btn{
   display:inline-block; padding:.9rem 1.2rem; border-radius:999px;
-  background: var(--dark-green); color: var(--off-white);
+  background: var(--off-white); color: var(--off-white);
   font-weight:700; letter-spacing:.2px; border:2px solid var(--dark-green);
+  font-family:'Gliker', system-ui, Arial, sans-serif;
 }
-.btn:hover{ background:transparent; color:var(--dark-green); }
+.btn:hover{ background:transparent; color:var(--off-white); }
 
 
 /* ===== Hero (background handled by animation.css/animation.js) ===== */
@@ -92,7 +93,7 @@ a:hover{ text-decoration: underline; }
 .section-talk .btn:hover{ color: var(--dark-purple); }
 
 .footer{ background: var(--off-white); padding: 2rem 0 3rem; border-top: 2px solid var(--black); }
-.foot-inner{ display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.foot-inner{ display:flex; align-items:center; justify-content:space-around; gap:1rem; }
 .foot-copy{ margin:0; font-weight:700; }
 .social a{ display:inline-flex; margin-left:.6rem; }
 .social img{ width:26px; height:26px; }
