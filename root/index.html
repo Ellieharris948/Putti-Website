@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Putti Studio — Strategic brand & marketing agency</title>
+    <meta name="description" content="Moulding brands from the inside out." />
+
+    <!-- Global + animation styles -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="animation.css" />
+    <link rel="stylesheet" href="panels.css" />
+    <link rel="stylesheet" href="why.css" />
+    <link rel="stylesheet" href="offerings-interactive.css">
+    <script src="offerings.js" defer></script>
+    <script src="why.js" defer></script>
+
+    <link rel="icon" href="images/favicon.png" />
+    <script src="animation.js" defer></script>
+  </head>
+
+  <body>
+    <noscript><div class="noscript">This site works best with JavaScript enabled.</div></noscript>
+
+    <!-- ===== Hero Paint Animation Section ===== -->
+    <header class="hero hero-paint">
+      <div class="paint-bg current"></div>
+      <div class="paint-bg next"></div>
+
+      <svg id="paint-svg" class="paint" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+            <feColorMatrix in="blur" mode="matrix"
+              values="1 0 0 0 0
+                      0 1 0 0 0
+                      0 0 1 0 0
+                      0 0 0 24 -12" result="goo"/>
+            <feBlend in="SourceGraphic" in2="goo"/>
+          </filter>
+        </defs>
+        <g id="paintLayer" filter="url(#goo)"></g>
+      </svg>
+
+      <div class="hero-inner container">
+        <div class="paint-text">
+          <div class="text-base">
+            <h1 id="paintH1"></h1>
+            <p id="paintP"></p>
+          </div>
+          <div class="text-reveal">
+            <h1 id="paintH1Next"></h1>
+            <p id="paintPNext"></p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== Scrolling marquee stripe ===== -->
+      <section class="stripe">
+        <div class="stripe-inner">
+          <span class="stripe-text">Strategy alone is talk. Activation alone is noise. Together they work.</span>
+          <span class="stripe-text">Strategy alone is talk. Activation alone is noise. Together they work.</span>
+          <span class="stripe-text">Strategy alone is talk. Activation alone is noise. Together they work.</span>
+          <span class="stripe-text">Strategy alone is talk. Activation alone is noise. Together they work.</span>
+        </div>
+      </section>
+
+      <!-- ===== Aqua panel ===== -->
+      <section class="panel panel-aqua">
+        <div class="bg">
+          <svg class="band" viewBox="0 0 1440 520" preserveAspectRatio="none" aria-hidden="true">
+            <rect x="0" y="0" width="1440" height="520" fill="#9af1dd"/>
+          </svg>
+          <svg class="cap-blue" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,120 C240,200 480,40 720,120 C960,200 1200,40 1440,120 L1440,0 L0,0 Z" fill="#07607b"/>
+          </svg>
+        </div>
+
+        <div class="container centered">
+          <h3 class="h-gliker h-wave on-wave-dark">What we DON’T do…</h3>
+          <ul class="bullets">
+            <p class="texters" >We DON’T just swap out logos on generic playbooks.</p>
+            <p class="texters">We DON’T inflate results or present empty, ‘shiny’ numbers.</p>
+            <p class="texters">We DON’T produce flashy creatives that miss the mark.</p>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== White panel (right rings peek into lime) ===== -->
+      <section class="panel panel-white">
+        <div class="bg">
+          <svg class="cap-light" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,120 C240,200 480,40 720,120 C960,200 1200,40 1440,120 L1440,0 L0,0 Z" fill="#9af1dd"/>
+          </svg>
+        </div>
+
+        <!-- Right circular rings -->
+        <svg class="swoosh-right" viewBox="0 0 600 600" aria-hidden="true">
+          <g fill="none" stroke-linecap="round">
+            <!-- All share the same (off-screen) center → clean crescent -->
+            <circle cx="820" cy="300" r="420" stroke="#066b4d" stroke-width="44"/>
+            <circle cx="820" cy="300" r="355" stroke="#066b4d" stroke-width="28"/>
+            <circle cx="700" cy="200" r="285" stroke="#066b4d" stroke-width="22"/>
+          </g>
+        </svg>
+
+        <div class="container centered">
+         <h3 class="h-gliker h-wave on-wave-light">What we DO do…</h3>
+          <p  class="texters">We DO strip back your brand, identify what's broken, and rebuild it with custom, targeted strategies.</p>
+          <p  class="texters">We DO provide transparent, honest results – the good, the bad, and the actionable. We’re your honest partners, moulding brands that truly stick.</p>
+          <p  class="texters">We DO craft memorable campaigns, designed to feel and crafted to convert. (We’re talking tangible ROI, not just ‘likes’.)</p>
+        </div>
+      </section>
+
+      <!-- ===== Lime panel ===== -->
+      <section class="panel panel-lime">
+        <!-- removed the left-side squiggles on purpose -->
+
+        <div class="container tight">
+          <div class="card">
+            <h3 class="h-gliker centered">How it works…</h3>
+            <h4>No Strategy?</h4>
+            <p class="texters">No Problem. We build your core brand strategy, then execute it flawlessly.</p>
+
+            <h4>Strategy in Place?</h4>
+            <p class="texters">Great. We audit your current approach, tighten your core, and launch straight into execution.</p>
+
+            <p class="note">Bonus: Your audit is free when you sign up for execution.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Rest of page ===== -->
+      <section class="section" id="why">
+        <div class="container">
+          <h3>Why us…</h3>
+
+          <!-- Pills -->
+          <div class="why-pills" role="tablist" aria-label="Why us">
+            <button class="pill" data-i="0" role="tab" aria-selected="true">Industry Specialists</button>
+            <button class="pill" data-i="1" role="tab" aria-selected="false">Human‑led Creative</button>
+            <button class="pill" data-i="2" role="tab" aria-selected="false">Personalised Approach</button>
+          </div>
+
+          <!-- Stage -->
+          <div class="why-stage" aria-live="polite">
+            <article class="why-card" data-i="0" role="tabpanel">
+              <p>We bring together a curated network of experts. This allows us to craft hyper-personalised strategies, moulded from deep analysis of consumer insights, understanding not just what resonates, but why.</p>
+            </article>
+
+            <article class="why-card" data-i="1" role="tabpanel" hidden>
+              <p>We delve deep into human psychology to create content that genuinely connects. Our creatives are designed to feel, but crafted to convert. We focus on purposeful content that moves people and drives action, not just fleeting trends.
+</p>
+            </article>
+
+            <article class="why-card" data-i="2" role="tabpanel" hidden>
+              <p>We embed deeply, moulding your brand from the inside. We only advise on services truly aligned with your goals. Our transparent partnership means breaking down what works (and what doesn't) to constantly refine. Brave brands learn, adapt, and win.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-grid" id="offerings">
+      <div class="container">
+        <h3>Our core offerings…</h3>
+
+        <div class="offers" id="offers">
+          <ul class="offer-list" aria-label="Offer categories">
+            <li
+              data-title="Brand strategy"
+              data-copy="We define your purpose, position, and path forward. Your brand’s blueprint for growth."
+            >Brand strategy</li>
+
+            <li
+              data-title="Brand identity"
+              data-copy="More than a logo — we craft your brand’s unique visual and verbal presence."
+            >Brand identity</li>
+
+            <li
+              data-title="Social &amp; content strategy"
+              data-copy="Engaging content and a roadmap for social platforms that truly resonate and convert."
+            >Social &amp; content strategy</li>
+
+            <li
+              data-title="Digital Ad Creative"
+              data-copy="High‑impact visuals and copy built specifically for your digital ad campaigns."
+            >Digital Ad Creative</li>
+
+            <li
+              data-title="Influencer Marketing"
+              data-copy="Connect your brand with authentic voices that amplify your message and reach."
+            >Influencer Marketing</li>
+
+            <li
+              data-title="Performance Marketing"
+              data-copy="Data‑driven campaigns crafted to deliver measurable results and tangible ROI."
+            >Performance Marketing</li>
+          </ul>
+
+          <div class="offer-detail" aria-live="polite">
+            <article id="offer-copy">
+              <h4 class="offer-title">Brand strategy</h4>
+              <p class="offer-text">We define your purpose, position, and path forward. Your brand’s blueprint for growth.</p>
+            </article>
+          </div>
+        </div>
+
+        <p class="hint">Hover or tap items to preview details.</p>
+      </div>
+    </section>
+
+      <section class="section section-talk" id="contact">
+        <div class="container">
+          <h3>Let’s talk…</h3>
+          <p>No obligation. Just a candid chat about your brand challenges and growth goals.</p>
+          <a class="btn" href="#form">Tell us about your project</a>
+          <p class="alt">or email <a class="link" href="mailto:hello@puttistudio.com">hello@puttistudio.com</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container foot-inner">
+        <p class="foot-copy">Moulding brands from the inside out</p>
+        <nav class="social" aria-label="Social links">
+          <a href="#" aria-label="LinkedIn"><img src="images/icon-linkedin.svg" alt="" /></a>
+          <a href="#" aria-label="Instagram"><img src="images/icon-instagram.svg" alt="" /></a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
