@@ -13,7 +13,7 @@
       <div class="phone-shell">
         <div class="phone-bezel">
           <div class="notch"></div>
-          <video class="screen" src="videos/1.mov" autoplay muted loop playsinline></video>
+          <video class="screen" src="videos/1.mp4" autoplay muted loop playsinline></video>
         </div>
 
         <div class="pill-stack">

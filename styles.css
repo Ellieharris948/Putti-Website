@@ -736,3 +736,71 @@ img{max-width:100%; display:block}
     justify-items: start;
   }
 }
+
+
+
+
+/* ===========================
+   MOBILE POLISH (≤ 640px)
+   add at the very end
+   =========================== */
+@media (max-width: 640px){
+
+  /* header */
+  .site-header .container{ padding:0 16px; }
+  .site-header .btn{ padding:1rem 1rem; font-size:.9rem; }
+
+  /* hero */
+  .hero-grid{ min-height:auto; padding-left:16px; }
+  .hero-copy{ padding:24px 0 12px; }
+  .hero-copy .btn{ width:100%; text-align:center; }
+  .hero-mosaic{ width:94vw; height:46vh; }
+
+  /* what we DON’T */
+  .whatwedont .media-panel{ min-height:440px; }
+  .whatwedont .phone-shell{ width:min(280px, 68vw); }
+  .whatwedont .pill-stack{ top:10%; left:100%; transform:translateX(-45%); gap:18px; }
+  .whatwedont .pill{ font-size:clamp(14px,4.2vw,18px); padding:.55em 1em; }
+  .whatwedont .comments img:nth-child(1){ width:50%; left:0; top:6%; }
+  .whatwedont .comments img:nth-child(2){ width:50%; left:0; top:38%; }
+  .whatwedont .comments img:nth-child(3){ width:62%; left:0; bottom:4%; }
+
+  /* what we DO */
+  .whatwedo .media-panel{ min-height:440px; padding-right:0; }
+  .whatwedo .phone-shell{ width:min(280px, 68vw); }
+  .whatwedo .pill-stack{ top:10%; right:100%; transform:translateX(45%); gap:18px; }
+  .whatwedo .pill{ font-size:clamp(14px,4.2vw,18px); padding:.55em 1em; }
+  .whatwedo .comments img:nth-child(1){ width:50%; right:0; top:14%; }
+  .whatwedo .comments img:nth-child(2){ width:50%; right:0; top:46%; }
+  .whatwedo .comments img:nth-child(3){ width:62%; right:0; bottom:6%; }
+
+  /* how it works */
+  .howitworks{ margin:0 16px; }
+  .howitworks .hiw-grid{ grid-template-columns:1fr; row-gap:28px; }
+  .howitworks .hiw-divider{ width:70%; height:8px; margin:8px auto 2px; }
+  .howitworks .hiw-left, .howitworks .hiw-right{ text-align:left; }
+  .howitworks .hiw-right{ max-width:none; }
+
+  /* squares carousel */
+  .squares .sq-wrap{ padding-inline:44px; }
+  .squares .sq-card{ flex:0 0 82%; }            /* show one main card */
+  .squares .sq-prev{ left:6px; }
+  .squares .sq-next{ right:6px; }
+  .squares .sq-title h4{ line-height:1.1; }
+  .squares .sq-desc p{ line-height:1.4; }
+
+  /* why us */
+  .whyus .why-grid{ grid-template-columns:1fr; gap:12px; }
+  .whyus .why-left{ padding:24px 16px; color:#000; }
+  .whyus .why-desc{ max-width:38ch; font-size:clamp(16px,4.6vw,18px); }
+
+  /* let’s talk */
+  .lets .lets-inner{ width:92vw; }
+  .lets .lets-lede{ font-size:clamp(16px,4.5vw,20px); }
+  .lets .lets-cta{ width:100%; max-width:520px; }
+  .lets .lets-email{ font-size:clamp(13px,3.8vw,16px); }
+
+  /* footer */
+  .site-footer .foot-inner{ grid-template-columns:1fr; }
+  .site-footer .foot-social{ justify-self:end; margin-right:16px; }
+}
