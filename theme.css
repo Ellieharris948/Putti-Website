@@ -23,7 +23,7 @@
 
   --shadow-1:0 6px 24px rgba(0,0,0,.12);
   --shadow-2:0 18px 48px rgba(0,0,0,.22);
-   --header-h:110px;
+   --header-h:200px;
 }
 
 html,body{margin:0; padding:0; background:var(--off); color:#0a0a0a; font-family:var(--font-body)}
