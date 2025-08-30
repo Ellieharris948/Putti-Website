@@ -1,0 +1,30 @@
+@font-face{
+  font-family:"Gliker";
+  src:url("fonts/Gliker-Variable.woff2") format("woff2");
+  font-weight:300 900;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Code Pro";
+  src:url("fonts/CodePro.ttf") format("truetype"); 
+  font-weight:300 800;
+  font-style:normal;
+  font-display:swap;
+}
+
+:root{
+  --font-header:"Gliker", sans-serif;
+  --font-body:"Code Pro", monospace;
+
+  --mint:#b2ff51; --pink:#ee9cea; --purple:#53185a;
+  --ink:#111214; --blue:#9af1dd; --blue-ink:#9af1dd;
+  --white:#fffdf3; --off:#fffdf3; --black:#000; --pill-green:#b2ff51;
+
+  --shadow-1:0 6px 24px rgba(0,0,0,.12);
+  --shadow-2:0 18px 48px rgba(0,0,0,.22);
+   --header-h:110px;
+}
+
+html,body{margin:0; padding:0; background:var(--off); color:#0a0a0a; font-family:var(--font-body)}
+h1,h2,h3,h4,h5,.display{font-family:var(--font-header)}
